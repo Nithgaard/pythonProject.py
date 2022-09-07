@@ -6,6 +6,8 @@ import os
 import sys
 import csv
 
+result = filecmp.cmp(src, dst)
+
 # function to write in csv file
 def write_in_csv(rows):
 
@@ -81,11 +83,9 @@ if choice == "Full":
         write_in_csv(rows)
 
 elif choice == "Incremental":
-    result = filecmp.cmp(src, dst)
     print("And you have chosen Incremental Backup.")
     src = input("src-path for backup: ")
     dst = input("dst-path for backup: ")
-    result = filecmp.cmp(src, dst)
     print("Is", src, "equal to", dst, "?".format(src, dst, result))
     print("You have chosen to backup from", src, "=>", dst, "at time:", dato)
     filez = shutil.copytree(src, dst + str(dato))
