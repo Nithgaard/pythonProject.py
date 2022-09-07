@@ -1,7 +1,13 @@
-# === H5-Projekt === pythonProject.py ===<br>
+# === H5-Projekt === pythonProject.py === W.I.P<br>
 # README file med instruktioner til brug og opsætning<br>
 Udarbejdet af Anders H. Toftegaard til Techcollege Aalborg Hovedforløb 5, kursus Serverautomatisering II. (Python)<br>
 Der vil i dette dokument være instruktioner til brug af koden, og forklaringer til hvorledes den er opsat.<br>
+# Hvad skal man vide før man læser eller køre koden?
+- Er der er noget der skal sættes op på forhånd?<br>
+Programmet er meget universalt og kræver ikke alverden for at kunne køre på din lokale maskine uanset os. Da det er brugeren selv som definere de fleste parametre, kan det benyttes af mange forskellige.
+- SQL server<br>
+I stedet for en eventuel opsætning af SQL server, behøver man kun at oprette en CSV fil et sted, hvor man så derefter linker det til sin kode. Der er en defineret funktion i programmet, hvor at man kan indsætte sin sti til sin CSV fil for dokumentation af backups.<br>
+Der bruges ikke andet særligt til programmet, som kræver præinstallation eller opsætning.
 
 # Kommentarer der forklarer egne metoder<br>
 Man kan med fordel åbne .py -scriptet "pythonProject.py" og følge med. Der er nemlig skrevet kommentarer til langt de fleste funktioner og linjer deri, som beskriver hvordan og hvorledes det kan bruges, og hvordan det skal forståes.<br>
