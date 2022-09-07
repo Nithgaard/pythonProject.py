@@ -1,6 +1,6 @@
 # This is a Python Project for teaching clean code concepts
 
-class Employee:
+class employee:
     def __init__(self, age, years_employed, is_retired):
         self.age = age
         self.years_employed = years_employed
@@ -19,7 +19,11 @@ def is_legal_drinking_age_dirty(age):
 # Use consts to describe the numbers you are using to your programs.
 def is_legal_drinking_age_clean(age):
     # Write your clean version here
-    return 0  # remove this to run your version
+    legal_drinking_age = 21
+    if age > legal_drinking_age:
+        return True
+    else:
+        return False
 
 
 # Be positive exersise
@@ -33,9 +37,12 @@ def is_logged_in_dirty(is_not_logged_in):
 
 
 # Solution to Be positive exersise
-def is_logged_in_clean(is_not_logged_in):
+def is_logged_in_clean(is_logged_in):
     # Write your clean version here
-    return 0  # remove this to run your version
+    if is_logged_in:
+        print("Logged in.")
+    else:
+        print("Failed to log in.")
 
 
 # Intermediate exercise
@@ -51,7 +58,11 @@ def eligible_for_pension_dirty(employee):
 # An intermediate Variable says a lot more them a long expression
 def eligible_for_pension_clean(employee):
     # Write your clean version here
-    return 0  # remove this to run your version
+    eligible_for_pension = employee.age > 55 and employee.years_employed > 10 and employee.is_retired
+    if eligible_for_pension
+        print("Can retire.")
+    else:
+        print("Is not eligible for retirement.")
 
 
 # Ternary exersise
@@ -66,7 +77,7 @@ def get_price_dirty(is_preordered):
 # Use a oneline Ternary.
 def get_price_clean(is_preordered):
     # Write your clean version here
-    return 0  # remove this to run your version
+    if is_preordered == True: return 200 else: return 350
 
 
 if __name__ == "__main__":
