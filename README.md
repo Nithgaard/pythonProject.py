@@ -1,6 +1,6 @@
 # === H5-Projekt === pythonProject.py === W.I.P<br>
 # README file med instruktioner til brug og opsætning<br>
-*Udarbejdet af Anders H. Toftegaard til Techcollege Aalborg Hovedforløb 5, kursus Serverautomatisering II.(Python)*<br>
+*Udarbejdet af Anders H. Toftegaard til Techcollege Aalborg Hovedforløb 5, kursus Serverautomatisering II.(Python v.3.10)*<br>
 Der vil i dette dokument være instruktioner til brug af koden, og forklaringer til hvorledes den er opsat.<br>
 Der er ligeledes en tilhørende dokument **"dokumentation"**, hvor at der bliver gennemgået lidt mere som *Brugerdokumentation / manualer*, *Design specifikation* og *Program dokumentation* - hvis det skulle have noget interesse.<br>
 
