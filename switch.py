@@ -42,7 +42,8 @@ size_of_switch = str(size_of_switch_input)
 # port_channel = [port_channel_input]
 
 # her oprettes og åbnes den fil som skal indeholde konfigurationsfilen.
-switch_config_file = open(r'/Users/AK42VU/Configs/{0}.txt'.format(hostname[0]), "w")
+# switch_config_file = open(r'/Users/AK42VU/Configs/{0}.txt'.format(hostname[0]), "w")
+switch_config_file = open(r'/Users/AK42VU/Configs/{0}.txt'.format(hostname), "w")
 
 # disse to variabler defineres statisk før at scriptet for alvor går igang, da disse er statiske igennem hele opgaven.
 # men der er samtidig mulighed for at ændre disse statiske variabler, hvis det skulle være nødvendigt.
