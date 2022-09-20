@@ -3,7 +3,6 @@ import shutil
 from datetime import datetime
 import filecmp
 import os
-import sys
 import csv
 import rows as rows
 

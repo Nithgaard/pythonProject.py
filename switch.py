@@ -1,6 +1,3 @@
-from os import write
-from typing import TextIO
-
 print('\n' +
       "! ---------- AHT / Cisco ---------- !\n" +
       "! ------ Switch Creation File ----- !\n" +
@@ -47,7 +44,6 @@ db = ".db"
 slash24 = "255.255.255.0"
 
 if size_of_switch == str("24P"):
-    # with open(switch_config_file, 'w') as f24:
     switch_config_file.write('none \n ' +
                              '!\n ' +
                              '! TODO \n ' +
@@ -261,7 +257,6 @@ if size_of_switch == str("24P"):
     switch_config_file.close()
 
 if size_of_switch == str("48P"):
-    # with open(switch_config_file, 'w') as f24:
     switch_config_file.write('none \n ' +
                              '!\n ' +
                              '! TODO \n ' +
@@ -474,4 +469,4 @@ if size_of_switch == str("48P"):
                              'end' + '\n')
     switch_config_file.close()
 else:
-    print('please pick a valid switch size')
+    print('Please pick a valid switch size...')
