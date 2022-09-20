@@ -1,8 +1,10 @@
+# print titlescreen og præsentér scriptets funktion.
 print('\n' +
       "! ---------- AHT / Cisco ---------- !\n" +
       "! ------ Switch Creation File ----- !\n" +
       "! ------------- 2960s ------------- !\n")
 
+# her begynder indsamlingen af userinputs.
 hostname_input = input("What is hostname of switch?: ")
 hostname = str(hostname_input)
 
@@ -39,10 +41,21 @@ size_of_switch = str(size_of_switch_input)
 # port_channel_input = input("Does the switch need port channel?(Yes/No): ")
 # port_channel = [port_channel_input]
 
+# her oprettes og åbnes den fil som skal indeholde konfigurationsfilen.
 switch_config_file = open(r'/Users/AK42VU/Configs/{0}.txt'.format(hostname[0]), "w")
+
+# disse to variabler defineres statisk før at scriptet for alvor går igang, da disse er statiske igennem hele opgaven.
+# men der er samtidig mulighed for at ændre disse statiske variabler, hvis det skulle være nødvendigt.
 db = ".db"
 slash24 = "255.255.255.0"
 
+# loop'et som printer outputtet af alle brugerens indtastninger, for at skabe overblik.
+output_call = [hostname + desired_access_vlan + desired_infrastructure_vlan + desired_voice_vlan + desired_IP_address + ip_default_gw + vtp_domain + vtp_pasword + site_name + size_of_switch]
+for output in output_call:
+    print(output)
+
+# her begynder den første del af scriptet. Det er en if elif else forgrening, som kigger på userinput i "size_of_switch"
+# hvis det er en 24P kører den denne del af scriptet, hvis ikke fortsætter den.
 if size_of_switch == str("24P"):
     switch_config_file.write('none \n ' +
                              '!\n ' +
@@ -254,9 +267,11 @@ if size_of_switch == str("24P"):
     switch_config_file.write('vtp password ' + vtp_pasword + '\n')
     switch_config_file.write('vtp version 3 \n ' +
                              'end' + '\n')
+    # det er vigtigt at lukke filen igen, når at man er færdig med at behandle den.
     switch_config_file.close()
 
-if size_of_switch == str("48P"):
+# her kører den fra, hvis det er en 48P switch, som userinput har bestemt.
+elif size_of_switch == str("48P"):
     switch_config_file.write('none \n ' +
                              '!\n ' +
                              '! TODO \n ' +
@@ -468,5 +483,9 @@ if size_of_switch == str("48P"):
     switch_config_file.write('vtp version 3 \n ' +
                              'end' + '\n')
     switch_config_file.close()
+
+# til sidst skriver den til en "Please pick a valid switch size...", hvis ikke at man har valgt en rigtigt størrelse.
+# så bliver man smidt ud af scriptet, og skal starte forfra. Man kunne godt have lavet dette til et loop. Men hvis man nu har lavet en tastefejl et andet sted
+# er dette også en nem måde at ryge ud af scriptet på også starte forfra på.
 else:
     print('Please pick a valid switch size...')
