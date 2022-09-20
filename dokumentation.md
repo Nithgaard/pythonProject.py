@@ -246,9 +246,11 @@ vtp version 3
  end
 </pre>
 <br>
+
 ## Design specifikation
 - **Find kommentarer til designet.**<br>
 Der henvises til selve scriptet og kommentarerne deri. Det giver meget mere mening for mig, at have konteksten for scriptet og designet i forlængelse af selve de linjer kode, som er blevet skrevet.
+
 ## Program dokumentation
 - **Hvordan virker programmet rent teknisk**<br>
 Rent teknisk fungerer scriptet i at det benytter sig af userinput til at lave nogle selections og et loop - for at oprette en fil og skrive i den.<br>
