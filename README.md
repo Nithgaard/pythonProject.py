@@ -42,8 +42,7 @@ I dette projekt er der lavet 3 forgreninger.<br>
 Opsummering: Det viser sig, at det er utroligt svært at lave differencierende backup typer, når at man ikke har adgang til f.eks. Windows' version af XCOPY som har indbygget struktur, til at lave de forskellige backups. Der findes meget få eksempler på internettet om selv at lave disse forskellige backups, og så det er W.I.P.
 
 ## Loop(Iteration)<br>
-Der er et par forskellige loops i opgaven. Det er bl.a. et while-loop når at der skal skrives i csv filen.<br>
-ligeledes er det elif argumenter, når at der skal vælges mellem de forskellige forgreninger.<br>
+Der er et loop i opgaven. Det er et while-loop når at der skal skrives i csv filen.<br>
 
 ## Mulighed for bruger input<br>
 Der er mulighed for en masse brugeriput i dette projekt. Det har været i fokus lige fra starten.<br>
@@ -54,4 +53,41 @@ Det er også lavet således at brugeren får kyndig vejledning igennem hele proc
 # Switch-script<br>
 Switch scriptet er designet til at skulle kunne producere en switch config fil til en 2960s switch. Både en 24P version og en 48P version.<br>
 Der er taget udgangspunkt i de conf filer, som jeg jævnligt laver på arbejde, så det er en tried&tested konfiguration.<br>
+Det betyder så også at koden er meget *simpel*, og den ville sagtens kunne udbygges mere, med automatisering allá Ansible, flere loops/forgreninger ift. hvad du vælger af switch komponenter og opsætning.<br>
+Man kunne også tilføje flere switche ind i scriptet relativt simpelt, og i den forbindelse lave en menu, sådan at man ville kunne vælge imellem eks-antal switche.<br>
 
+## Hvad skal man vide før man læser eller køre koden?<br>
+- **Er der er noget der skal sættes op på forhånd?**<br>
+Denne kode er meget simpel og universel. Det er ikke rigtigt påkrævet at der skal sættes særligt meget op på forhånd. Hvis man havde mere tid, og eventuelt var dygtigere end mig til at scripte - kunne man godt opsætte en SQL DB, hvor at man kunne logfører switchnavn, IP, Site, Serienr. osv. (ting man alligevel ville logge når at man satte en ny switch op.)<br>
+
+## Kommentarer der forklarer egne metoder<br>
+Der vil ligesom ved tidligere script være udfoldende kommentarer i selve scriptfilen, som man til fordel ville kunne følge med i når scriptet udføres. Men som beskrevet tidligere er det også meget simpelt. Så der er ikke meget, som der skal forstås.<br>
+
+## Brug af biblioteker(moduler)<br>
+Der er ikke brugt nogle moduler i dette script.<br>
+
+## Forgreninger(selestion)<br>
+Indtil videre er der kun 2 rigtige forgreninger i dette script. Som beskrevet i et tidligere afsnit kunne der sagtens tilføjes mange flere, og scriptet kunne blive relativt komplekst. Men da dette kursus kun strækker sig over 5 gange er det begrænset, hvor meget at der kan nås/produceres når at man ikke har scriptet i flere år.<br>
+- **24P** <> **48P**<br>
+24P/48P forgreningen går ind og kigger på userinput og om man enten har valgt 24P eller 48P versionen af switchen. (24 Ports, 48 Ports).<br>
+og herefter bliver der genereret en conf fil på baggrund af dette valg. Det er at userinput er centralt, men også her at man virkelig ville kunne udvide scriptet til skyerne, og blive ved med at arbejde på det i årevis. Man ville nemlig kunne tilføje hver eneste gang at man fik en ny switch ind i produktion.<br>
+
+## Loop(Iteration)<br>
+Der er et enkelt loop i scriptet, som går igennem alt det userinput som er indtastet og displayer det på skærmen for brugeren. Dette er lavet for at give brugeren af scriptet en ekstra troubleshooting step, hvis at der er noget som er gået galt. Men også således at man lige ved et øjekast kan se om der er sket en tastefejl eller lignende.<br>
+
+## Mulighed for bruger input<br>
+Hele dette script bygger på userinput. Det er grundstenen for at dette script overhovedet kan lade sig gøre. <br>
+Her er en liste over input som skal komme fra brugeren:<br>
+<br>
+- hostname
+- access-vlan
+- infrastructure-vlan
+- voice-vlan
+- default gateway
+- vtp-domain
+- vtp-password
+- IP address
+- site-name
+- size of switch
+<br>
+I teorien kunne man også spørge ind til hvilke porte der skal trunkes, hvilke porte der skal være port-channels på også rette scriptet til ift. til dette. 
