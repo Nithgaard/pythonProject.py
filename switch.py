@@ -32,9 +32,15 @@ desired_IP_address = str(desired_IP_address_input)
 site_name_input = input("What is the name of the site?: ")
 site_name = str(site_name_input)
 
-size_of_switch_input = input("What is the size of switch?(24P/48P): ")
-size_of_switch = str(size_of_switch_input)
-
+# size_of_switch_input = input("What is the size of switch?(24P/48P): ")
+# size_of_switch = str(size_of_switch_input)
+while True:
+    size_of_switch_input = input("What is the size of switch?(24P/48P): ")
+    size_of_switch = str(size_of_switch_input)
+    if size_of_switch == '24P' or size_of_switch == '48P':
+        break
+    else:
+        print("Try again.")
 # trunk_ports_input = input("What ports on the switch are trunked?: ")
 # trunk_ports = [trunk_ports_input]
 
@@ -487,6 +493,5 @@ elif size_of_switch == str("48P"):
 
 # til sidst skriver den til en "Please pick a valid switch size...", hvis ikke at man har valgt en rigtigt størrelse.
 # så bliver man smidt ud af scriptet, og skal starte forfra. Man kunne godt have lavet dette til et loop. Men hvis man nu har lavet en tastefejl et andet sted
-# er dette også en nem måde at ryge ud af scriptet på også starte forfra på.
-else:
-    print('Please pick a valid switch size...')
+# er dette også en nem måde at ryge ud af scriptet på også starte forfra på
+

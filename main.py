@@ -5,6 +5,53 @@ import filecmp
 import os
 import csv
 import rows as rows
+import glob
+
+
+def ReadDir(dir1):
+    # read file names from a dir into a list
+    # compare the file names and keep the files that are with the same name
+    filelist1 = []
+    for filename in glob.glob(os.path.join(dir1, '*.txt')):
+        filelist1.append(filename)
+    return filelist1
+
+
+def GetFileName(filedir):
+    return filedir.split('\\')[-1]
+
+
+def CmpFile(file1, file2):
+    # Compare two files, if file1 is not identical with file2,
+    # return False; otherwise return True
+    # Also print out the filename and change starting line
+    f1 = open(file1).readlines()
+    f2 = open(file2).readlines()
+    filename = GetFileName(file1)
+    IsIdentical = True
+    for linenum in range(len(f1)):
+        if f1[linenum] != f2[linenum]:
+            print('change in file "{0}" starts from line {1}'.format(filename, linenum))
+            IsIdentical = False
+            break
+    return IsIdentical
+
+
+def CmpDir(dir1, dir2):
+    # Compare txt files in two directories dir1 and dir2
+    # with the same file name, to see if they are identical
+    [list1, list2] = map(ReadDir, [dir1, dir2])
+    list1.sort()
+    list2.sort()
+    for filedir1 in list1:
+        filename = GetFileName(filedir1)
+        filedir2 = dir2 + filename
+        if filedir2 in list2:
+            is_same_file = CmpFile(filedir1, filedir2)
+            if is_same_file:
+                pass
+            else:
+                pass
 
 
 def write_in_csv(rows):
@@ -114,8 +161,10 @@ elif choice == "Differential":
     # inform user
     print("You have chosen to backup from", src, "=>", dst, "at time:", dato)
 
+    CmpDir(src, dst)
+
     # copy files from one place to another, specified by user
-    filez = shutil.copytree(src, dst + str(dato))
+    # filez = shutil.copytree(src, dst + str(dato))
 
     # Check whether the specified path exists or not
     path = dst + str(dato)
