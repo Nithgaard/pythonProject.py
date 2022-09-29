@@ -34,6 +34,7 @@ site_name = str(site_name_input)
 
 # size_of_switch_input = input("What is the size of switch?(24P/48P): ")
 # size_of_switch = str(size_of_switch_input)
+# while-loop to check if you are correct when selecting switch-size
 while True:
     size_of_switch_input = input("What is the size of switch?(24P/48P): ")
     size_of_switch = str(size_of_switch_input)
