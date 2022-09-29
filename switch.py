@@ -2,7 +2,7 @@
 print('\n' +
       "! ---------- AHT / Cisco ---------- !\n" +
       "! ------ Switch Creation File ----- !\n" +
-      "! ------------- 2960s ------------- !\n")
+      "! --------- 2960s 24P/48P --------- !\n")
 
 # her begynder indsamlingen af userinputs.
 hostname_input = input("What is hostname of switch?: ")
